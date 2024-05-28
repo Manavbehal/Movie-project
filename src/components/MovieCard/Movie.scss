@@ -1,0 +1,185 @@
+.Movie-title{
+    color:white;
+    font-size:35px;
+    font-weight: 400;
+    margin-top: 20px;
+    @media screen and (min-width: 350px) and (max-width: 900px) {
+        font-size: 28px;
+    }
+}
+
+
+
+.movie-row{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    overflow-x:scroll; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    gap:10px;
+    &::-webkit-scrollbar {
+        display: none; 
+    }
+    
+  
+
+    .movie-card{
+        color:white;
+        border:2px solid white;
+        display: inline-block;
+        margin-right: 10px;
+        background-color: #333;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 200px;
+        flex-shrink: 0;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        z-index: 0;
+        padding: 0;
+        &:hover {
+            box-shadow: 4px 4px 8px #000000;
+            border-color: rgb(189, 189, 189);
+            border-color: darken(#21daa2, 20%);
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .rating{
+            display: flex;
+            position: absolute;
+             top: 5px;
+            left: 5px;
+            
+            justify-content: space-between;
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0); 
+            color: white;
+           
+            align-items: center;
+
+            .rating-container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:50px;
+                height: 30px;
+                background: rgba(0, 0, 0, 0.5); 
+                z-index: 1;
+                color:#21daa2;
+                border-radius: 5px;
+                padding-top: 10px;
+                .rating-1{
+                    font-size: 14px;
+                   
+                }
+                .rating-text{
+                   
+                   
+                    font-size: 14px;
+                    margin-left: 3px;
+        
+                }
+            }
+
+            
+
+            .bookmark-container{
+                background: rgba(0, 0, 0, 0.5); 
+                position: absolute;
+                  top: 3px;
+                  right: 10px;
+                z-index: 1;
+                font-size: 20px;
+                width:30px;
+                height: 35px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color:#21daa2;
+                border-radius: 5px;
+                .bookmark{
+                    font-size: 20px;
+                    margin-top: 10px;
+                }
+                
+            }
+        }
+
+        
+    
+        .movie-poster {
+            width: 100%;
+            height: auto;
+        }
+    
+        .info {
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width:100%;
+            box-sizing: border-box;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+            overflow-wrap: break-word; 
+            white-space: normal; 
+            .title {
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
+    
+            .others {
+                font-size: 0.8rem;
+                color: #aaa;
+            }
+    
+            .description {
+                font-size: 0.9rem;
+                color: #ddd;
+            }
+        }
+
+        @media screen and (min-width: 350px) and (max-width: 900px) {
+           
+         width:160px;
+        .info{
+            .title{
+                font-size: 0.8rem;
+            }
+            .others{
+                font-size: 0.7rem;
+            }
+            
+        }
+        .rating{
+            .rating-container{
+            font-size: 14px;
+            width:45px;
+            height:25px;
+
+            }
+        .bookmark-container{
+            width:26px;
+            height: 30px;
+
+            .bookmark{
+                font-size: 19px;
+            }
+        }
+    }
+
+
+        }
+    }
+
+
+
+
+}
+  
