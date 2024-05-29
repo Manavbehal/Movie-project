@@ -4,6 +4,7 @@ import ISO6391 from 'iso-639-1';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { BsStarFill, BsBookmark, BsBookmarkFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {
     const { title, name, vote_average, poster_path, release_date, original_language, adult, id } = movie;
@@ -28,6 +29,7 @@ const MovieCard = ({ movie }) => {
     };
 
     return (
+        <Link to={`/movie/${movie.id}`} key={movie.id} className="slider-item1">
         <div className="movie-card">
             <div className="rating">
                 <div className="rating-container">
@@ -67,6 +69,7 @@ const MovieCard = ({ movie }) => {
                
             </div>
         </div>
+        </Link>
     );
 };
 
