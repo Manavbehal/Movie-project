@@ -95,7 +95,7 @@ const Search = () => {
                 className="search-input"
             />
 
-            {isLoading && <p>Loading...</p>}
+            {isLoading && <p className='search'>Searching For Movie....</p>}
 
             <div className="movie-results">
                 {movies.map((movie) => (

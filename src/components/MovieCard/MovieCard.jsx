@@ -37,9 +37,9 @@ const MovieCard = ({ movie }) => {
                    <p className='rating-text'>{vote_average.toFixed(1)}</p>
                 
                   
-            </div>
+                 </div>
 
-          <div className="bookmark-container">
+                 <div className="bookmark-container">
                   <p
                     className="bookmark"
                     onClick={handleBookmarkClick}
@@ -47,7 +47,7 @@ const MovieCard = ({ movie }) => {
                     {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
                 </p>
                 </div>
-                </div>
+            </div>
             <LazyLoadImage
                 className="movie-poster"
                 src={`https://image.tmdb.org/t/p/w300${poster_path}`}

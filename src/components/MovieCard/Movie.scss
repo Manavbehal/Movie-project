@@ -20,6 +20,7 @@
     overflow-y: hidden; 
     white-space: nowrap; 
     gap:10px;
+   
     &::-webkit-scrollbar {
         display: none; 
     }
@@ -148,6 +149,7 @@
         @media screen and (min-width: 350px) and (max-width: 900px) {
            
          width:160px;
+         
         .info{
             .title{
                 font-size: 0.8rem;

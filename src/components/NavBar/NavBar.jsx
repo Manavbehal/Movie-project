@@ -12,7 +12,7 @@ function NavBar() {
         <p>Movies</p>
       </div>
       <div className="linkcontainer">
-        <NavLink exact to="/" activeClassName="active">
+        <NavLink  to="/" activeClassName="active">
           <span className="link_icon"><MdHome /></span>
           <span className="link_text">Home</span>
         </NavLink>

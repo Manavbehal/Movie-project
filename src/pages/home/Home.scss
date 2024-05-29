@@ -11,10 +11,14 @@ body{
     height: 100vh;
     border:0px solid black;
     z-index: 50;
+   
     @media screen and (min-width: 350px) and (max-width: 900px) {
-
+         
         margin-left: 2%;
         width:95%;
+        height: 100%;
+        padding-bottom: 50px;
+       
 
       
     }

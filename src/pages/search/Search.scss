@@ -7,6 +7,17 @@
     height: 100vh;
     margin-left: 17%;
     overflow-y: auto; 
+
+    .search{
+        color: white;
+    }
+    @media screen and (min-width: 350px) and (max-width: 900px) {
+        margin-left: 0%;
+        width: 100%;
+       
+        
+        padding-bottom: 100px;;
+    }
 }
 
 
@@ -28,6 +39,9 @@
     gap: 15px;
     
     margin: 0 50px;
+    @media screen and (min-width: 350px) and (max-width: 900px) {
+        margin: 3px 0px;
+    }
 
     
     .movie-card{
@@ -150,7 +164,12 @@
 
         @media screen and (min-width: 350px) and (max-width: 900px) {
            
-         width:160px;
+         width:150px;
+        
+         
+        
+        
+         
         .info{
             .title{
                 font-size: 0.8rem;

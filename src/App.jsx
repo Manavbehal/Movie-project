@@ -12,7 +12,7 @@ import NavBar from './components/NavBar/NavBar';
 const App = () => {
   return (
     <>
-      <Router>
+      <Router basename="/Movie-project">
         <div className="app">
           <NavBar />
           <div className="content">

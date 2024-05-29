@@ -49,7 +49,7 @@ const MovieList = ({ category ,title}) => {
         <div className="movie-list-container">
             <h1>{title}</h1>
             
-            {isLoading && <p>Loading...</p>}
+            {isLoading && <p className='loading'>Loading...</p>}
 
             <div className="movie-results">
                 {movies.map((movie) => (
