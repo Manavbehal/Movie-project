@@ -8,6 +8,7 @@ import Search from './pages/search/Search';
 import Tvseries from './pages/tvseries/Tvseries';
 import './App.scss';
 import NavBar from './components/NavBar/NavBar';
+import MovieDetail from './pages/MovieDetails/MovieDetails';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/search" element={<Search />} />
               <Route path="/tvseries" element={<Tvseries />} />
               <Route path="/bookmark" element={<Bookmark />} />
+              <Route path="/movie/:id" element={<MovieDetail />} />
             </Routes>
           </div>
         </div>

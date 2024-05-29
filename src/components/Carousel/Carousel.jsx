@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useRef } from 'react';
 import { Carousel as ReactCarousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Carousel.scss';
@@ -8,11 +8,13 @@ import Image from '../../components/Image/Image';
 import StarRating from '../Rating/Rating.jsx';
 import ISO6391 from 'iso-639-1';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 const Carousel = () => {
     const [movies, setMovies] = useState([]);
     const [isMobile, setIsMobile] = useState(true);
-
+    const carouselRef = useRef(null);
+    const [isAutoPlayActive, setIsAutoPlayActive] = useState(false);
     useEffect(() => {
       const fetchMovies = async () => {
         try {
@@ -31,20 +33,35 @@ const Carousel = () => {
       fetchMovies();
     }, []);
 
-    const setDeviceType = () => {
-      setIsMobile(window.innerWidth < 900);
-    };
-
+    const setDeviceType = () => (window.innerWidth < 900
+      ? setIsMobile(true)
+      : setIsMobile(false));
+  
     useEffect(() => {
       setDeviceType();
-      window.addEventListener('resize', setDeviceType);
-      return () => window.removeEventListener('resize', setDeviceType);
+      window.addEventListener('resize', () => setDeviceType());
+    }, []);
+
+    useEffect(() => {
+      const handleInteraction = () => {
+        setIsAutoPlayActive(true);
+        window.removeEventListener('click', handleInteraction);
+        window.removeEventListener('touchstart', handleInteraction);
+      };
+
+      window.addEventListener('click', handleInteraction);
+      window.addEventListener('touchstart', handleInteraction);
+
+      return () => {
+        window.removeEventListener('click', handleInteraction);
+        window.removeEventListener('touchstart', handleInteraction);
+      };
     }, []);
 
     return (
       <div className="movie-slider">
         <ReactCarousel
-          autoPlay
+          autoPlay={isAutoPlayActive}
           infiniteLoop
           emulateTouch
           autoFocus
@@ -57,8 +74,10 @@ const Carousel = () => {
           showArrows={false}
           showThumbs={false}
           interval={2000}
+          ref={carouselRef}
         >
           {movies.map((movie) => (
+             <Link to={`/movie/${movie.id}`} key={movie.id} className="slider-item1">
             <div key={movie.id} className="slider-item">
               <div className="playIcon">
                 <FaPlay />
@@ -89,9 +108,12 @@ const Carousel = () => {
                 </div>
               </div>
             </div>
+            </Link>
           ))}
         </ReactCarousel>
+        
       </div>
+      
     );
 };
 

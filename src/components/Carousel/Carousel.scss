@@ -12,8 +12,9 @@
         box-shadow: 2px 2px 0.5rem rgba(0, 0, 0, 0.5);
         border: 1px solid #686868;
         margin-top: 10px;
+        
 
-      }
+      
 
       .playIcon {
         position: absolute;
@@ -59,7 +60,13 @@
     overflow-wrap: break-word; 
     white-space: normal; 
     justify-content: center;
-   
+    .title{
+      h1{
+        margin-left: 0px;
+        text-align: left;
+        margin-bottom: 0;
+      }
+    }
   }
  
   .overview{
@@ -108,19 +115,13 @@
     }
 
     @media screen and (min-width: 350px) and (max-width: 900px) {
-
+       
         .slider-item{
           height: 50vh;
         }
         .info{
           font-size: 1em;
-          .title{
-            h1{
-              margin-left: 0px;
-              text-align: left;
-              margin-bottom: 0;
-            }
-          }
+          
         }
         .overview{
           text-align: left;
@@ -143,6 +144,6 @@
   
     
 
-  }
+  }}
   
   
